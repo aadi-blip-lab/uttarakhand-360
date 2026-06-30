@@ -43,35 +43,70 @@ html = f"""
 <!DOCTYPE html>
 <html>
 <head>
-<title>Uttarakhand 360 Weather</title>
+<title>Uttarakhand 360 | Live Weather Dashboard</title>
 
 <style>
 
-body{{
-font-family:Arial;
-background:#f2f2f2;
-padding:30px;
+body {{
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
 }}
 
-table{{
-width:100%;
-border-collapse:collapse;
-background:white;
+.navbar {{
+    background: #0b5394;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }}
 
-th,td{{
-padding:12px;
-border:1px solid #ddd;
-text-align:center;
+.logo {{
+    font-size: 24px;
+    font-weight: bold;
 }}
 
-th{{
-background:#0b5394;
-color:white;
+.menu a {{
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
 }}
 
-h1{{
-color:#0b5394;
+.container {{
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+}}
+
+table {{
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}}
+
+th, td {{
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}}
+
+th {{
+    background: #0b5394;
+    color: white;
+}}
+
+h1 {{
+    color: #0b5394;
+    margin-bottom: 5px;
+}}
+
+p {{
+    color: #555;
 }}
 
 </style>
@@ -80,11 +115,23 @@ color:#0b5394;
 
 <body>
 
-<h1>🌦 Uttarakhand 360</h1>
+<div class="navbar">
+    <div class="logo">🌦 Uttarakhand 360</div>
 
-<h2>Live Weather Dashboard</h2>
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Weather</a>
+        <a href="#">Districts</a>
+        <a href="#">Travel</a>
+        <a href="#">About</a>
+    </div>
+</div>
 
-<p><b>Last Updated:</b> {datetime.now().strftime("%d %B %Y %I:%M %p")} IST</p>
+<div class="container">
+
+<h1>Live Weather Dashboard</h1>
+
+<p><strong>Last Updated:</strong> {datetime.now().strftime("%d %B %Y %I:%M %p")} IST</p>
 
 <p>Automatically updated using WeatherAPI and GitHub Actions.</p>
 
@@ -101,6 +148,8 @@ color:#0b5394;
 {rows}
 
 </table>
+
+</div>
 
 </body>
 </html>
