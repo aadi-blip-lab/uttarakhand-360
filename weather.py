@@ -729,12 +729,7 @@ print()
 
 print(f"Cities Processed : {len(cities_weather)}")
 
-print(
-    "Generated At :",
-last_updated = datetime.now(TIMEZONE).strftime(
-        "%d %B %Y %I:%M:%S %p"
-    )
-)
+print("Generated At :", last_updated)
 
 print()
 
