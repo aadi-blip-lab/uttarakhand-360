@@ -90,9 +90,9 @@ p {
 
 <h1>Live Weather Dashboard</h1>
 
-<p><strong>Last Updated:</strong> 30 June 2026 08:37 PM IST</p>
+<p><strong>🌦 Weather Last Updated:</strong> 01 July 2026 • 02:17:14 AM</p>
 
-<p>Automatically updated using WeatherAPI and GitHub Actions.</p>
+<p><strong>🕒 Current India Time:</strong> <span id="clock"></span></p>
 
 <table>
 
@@ -107,18 +107,18 @@ p {
 
         <tr>
             <td>Dehradun</td>
-            <td>27.1°C</td>
-            <td>Clear</td>
-            <td>59%</td>
+            <td>25.2°C</td>
+            <td>Partly Cloudy</td>
+            <td>77%</td>
             <td>3.6 km/h</td>
         </tr>
         
         <tr>
             <td>Haridwar</td>
-            <td>31.6°C</td>
-            <td>Clear</td>
-            <td>52%</td>
-            <td>7.2 km/h</td>
+            <td>27.8°C</td>
+            <td>Patchy rain nearby</td>
+            <td>73%</td>
+            <td>5.4 km/h</td>
         </tr>
         
         <tr>
@@ -181,6 +181,29 @@ p {
 </table>
 
 </div>
+
+<script>
+
+function updateClock() {
+
+    const now = new Date();
+
+    document.getElementById("clock").innerHTML =
+        now.toLocaleTimeString("en-IN", {
+            timeZone: "Asia/Kolkata",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
+        });
+
+}
+
+updateClock();
+
+setInterval(updateClock, 1000);
+
+</script>
 
 </body>
 </html>
