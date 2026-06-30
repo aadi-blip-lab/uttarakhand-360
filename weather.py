@@ -746,3 +746,13 @@ print("Ready for GitHub Pages.")
 print()
 
 print("=" * 60)
+
+# ==========================================================
+# GENERATE OTHER PAGES
+# ==========================================================
+
+print()
+
+print("Generating additional pages...")
+
+print()
