@@ -1,22 +1,26 @@
 import os
 import requests
+from cities import CITIES
 
 API_KEY = os.getenv("WEATHER_API_KEY")
 
-city = "Dehradun"
+print("=" * 50)
+print("UTTARAKHAND 360 WEATHER REPORT")
+print("=" * 50)
 
-url = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}"
+for city in CITIES:
+    url = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}"
 
-response = requests.get(url)
+    response = requests.get(url)
 
-if response.status_code == 200:
-    data = response.json()
+    if response.status_code == 200:
+        data = response.json()
 
-    print("City:", data["location"]["name"])
-    print("Temperature:", data["current"]["temp_c"], "°C")
-    print("Condition:", data["current"]["condition"]["text"])
-    print("Humidity:", data["current"]["humidity"], "%")
-    print("Wind:", data["current"]["wind_kph"], "km/h")
+        print(f"\n📍 {data['location']['name']}")
+        print(f"🌡 Temperature : {data['current']['temp_c']}°C")
+        print(f"☁ Condition   : {data['current']['condition']['text']}")
+        print(f"💧 Humidity   : {data['current']['humidity']}%")
+        print(f"💨 Wind       : {data['current']['wind_kph']} km/h")
 
-else:
-    print("Error:", response.text)
+    else:
+        print(f"\n❌ Could not fetch weather for {city}")
