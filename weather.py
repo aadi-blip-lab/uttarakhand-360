@@ -688,9 +688,9 @@ rel="stylesheet">
 
 {hero}
 
-{highlights}
-
 {cards_section}
+
+{highlights}
 
 {footer}
 
