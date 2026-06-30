@@ -7,6 +7,7 @@ from cities import CITIES
 API_KEY = os.getenv("WEATHER_API_KEY")
 
 rows = ""
+cards = ""
 
 print("=" * 50)
 print("UTTARAKHAND 360 WEATHER REPORT")
@@ -39,6 +40,21 @@ for city in CITIES:
             <td>{wind} km/h</td>
         </tr>
         """
+        cards += f"""
+<div class="weather-card">
+
+<h2>{name}</h2>
+
+<div class="temp">{temp}°C</div>
+
+<p>{condition}</p>
+
+<p>💧 {humidity}%</p>
+
+<p>💨 {wind} km/h</p>
+
+</div>
+"""
 
 html = f"""
 <!DOCTYPE html>
@@ -47,6 +63,33 @@ html = f"""
 <title>Uttarakhand 360 | Live Weather Dashboard</title>
 
 <style>
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+margin-bottom:30px;
+}
+
+.weather-card{
+background:white;
+width:220px;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
+}
+
+.weather-card:hover{
+transform:translateY(-5px);
+}
+
+.temp{
+font-size:36px;
+font-weight:bold;
+color:#0b5394;
+}
 
 body {{
     font-family: Arial, sans-serif;
@@ -147,6 +190,12 @@ p {{
 </tr>
 
 {rows}
+
+<div class="cards">
+
+{cards}
+
+</div>
 
 </table>
 
