@@ -141,7 +141,7 @@ visibility = max(
 # ----------------------------------
 
 env = Environment(
-    loader=FileSystemLoader("docs")
+    loader=FileSystemLoader("templates")
 )
 
 template = env.get_template("index.html")
