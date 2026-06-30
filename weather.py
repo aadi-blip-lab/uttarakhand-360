@@ -1,236 +1,211 @@
 import os
 import requests
+
 from datetime import datetime
 from zoneinfo import ZoneInfo
+
+from jinja2 import Environment, FileSystemLoader
+
 from cities import CITIES
+
+
+# ----------------------------------
+# CONFIGURATION
+# ----------------------------------
 
 API_KEY = os.getenv("WEATHER_API_KEY")
 
-rows = ""
-cards = ""
+BASE_URL = "https://api.weatherapi.com/v1/current.json"
 
-print("=" * 50)
-print("UTTARAKHAND 360 WEATHER REPORT")
-print("=" * 50)
+TIMEZONE = ZoneInfo("Asia/Kolkata")
+
+
+# ----------------------------------
+# STORAGE
+# ----------------------------------
+
+weather_data = []
+
+
+# ----------------------------------
+# FETCH WEATHER
+# ----------------------------------
+
+print("=" * 60)
+print("UTTARAKHAND 360")
+print("Fetching Weather...")
+print("=" * 60)
+
 
 for city in CITIES:
 
-    url = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}"
+    url = f"{BASE_URL}?key={API_KEY}&q={city}"
 
-    response = requests.get(url)
+    try:
 
-    if response.status_code == 200:
+        response = requests.get(url, timeout=20)
+
+        response.raise_for_status()
 
         data = response.json()
 
-        name = data["location"]["name"]
-        temp = data["current"]["temp_c"]
-        condition = data["current"]["condition"]["text"]
-        humidity = data["current"]["humidity"]
-        wind = data["current"]["wind_kph"]
+        current = data["current"]
+        location = data["location"]
 
-        print(f"\n{name} - {temp}°C")
+        city_weather = {
 
-        rows += f"""
-        <tr>
-            <td>{name}</td>
-            <td>{temp}°C</td>
-            <td>{condition}</td>
-            <td>{humidity}%</td>
-            <td>{wind} km/h</td>
-        </tr>
-        """
-        cards += f"""
-<div class="weather-card">
+            "city": location["name"],
 
-<h2>{name}</h2>
+            "region": location["region"],
 
-<div class="temp">{temp}°C</div>
+            "country": location["country"],
 
-<p>{condition}</p>
+            "localtime": location["localtime"],
 
-<p>💧 {humidity}%</p>
+            "temperature": current["temp_c"],
 
-<p>💨 {wind} km/h</p>
+            "feels_like": current["feelslike_c"],
 
-</div>
-"""
+            "condition": current["condition"]["text"],
 
-html = f"""
-<!DOCTYPE html>
-<html>
-<head>
-<title>Uttarakhand 360 | Live Weather Dashboard</title>
+            "icon": "https:" + current["condition"]["icon"],
 
-<style>
+            "humidity": current["humidity"],
 
-.cards{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-margin-bottom:30px;
-}
+            "wind": current["wind_kph"],
 
-.weather-card{
-background:white;
-width:220px;
-padding:20px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-text-align:center;
-transition:0.3s;
-}
+            "wind_dir": current["wind_dir"],
 
-.weather-card:hover{
-transform:translateY(-5px);
-}
+            "pressure": current["pressure_mb"],
 
-.temp{
-font-size:36px;
-font-weight:bold;
-color:#0b5394;
-}
+            "visibility": current["vis_km"],
 
-body {{
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    margin: 0;
-    padding: 0;
-}}
+            "uv": current["uv"],
 
-.navbar {{
-    background: #0b5394;
-    color: white;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}}
+            "cloud": current["cloud"],
 
-.logo {{
-    font-size: 24px;
-    font-weight: bold;
-}}
+            "is_day": current["is_day"]
 
-.menu a {{
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
-}}
+        }
 
-.container {{
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px;
-}}
+        weather_data.append(city_weather)
 
-table {{
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-}}
+        print(
+            f"✓ {city_weather['city']} : "
+            f"{city_weather['temperature']}°C"
+        )
 
-th, td {{
-    padding: 14px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-}}
+    except Exception as e:
 
-th {{
-    background: #0b5394;
-    color: white;
-}}
+        print(f"✗ {city}")
+        print(e)
 
-h1 {{
-    color: #0b5394;
-    margin-bottom: 5px;
-}}
 
-p {{
-    color: #555;
-}}
+# ----------------------------------
+# SORTING
+# ----------------------------------
 
-</style>
+warmest = max(
+    weather_data,
+    key=lambda x: x["temperature"]
+)
 
-</head>
+coldest = min(
+    weather_data,
+    key=lambda x: x["temperature"]
+)
 
-<body>
+windiest = max(
+    weather_data,
+    key=lambda x: x["wind"]
+)
 
-<div class="navbar">
-    <div class="logo">🌦 Uttarakhand 360</div>
+humid = max(
+    weather_data,
+    key=lambda x: x["humidity"]
+)
 
-    <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Weather</a>
-        <a href="#">Districts</a>
-        <a href="#">Travel</a>
-        <a href="#">About</a>
-    </div>
-</div>
+uv = max(
+    weather_data,
+    key=lambda x: x["uv"]
+)
 
-<div class="container">
+visibility = max(
+    weather_data,
+    key=lambda x: x["visibility"]
+)
 
-<h1>Live Weather Dashboard</h1>
 
-<p><strong>🌦 Weather Last Updated:</strong> {datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %B %Y • %I:%M:%S %p")}</p>
+# ----------------------------------
+# TEMPLATE ENGINE
+# ----------------------------------
 
-<p><strong>🕒 Current India Time:</strong> <span id="clock"></span></p>
+env = Environment(
+    loader=FileSystemLoader("docs")
+)
 
-<table>
+template = env.get_template("index.html")
+# ----------------------------------
+# RENDER WEBSITE
+# ----------------------------------
 
-<tr>
-<th>City</th>
-<th>Temperature</th>
-<th>Condition</th>
-<th>Humidity</th>
-<th>Wind</th>
-</tr>
+html = template.render(
 
-{rows}
+    weather=weather_data,
 
-<div class="cards">
+    updated=datetime.now(TIMEZONE).strftime(
+        "%d %B %Y • %I:%M:%S %p"
+    ),
 
-{cards}
+    warmest=warmest,
 
-</div>
+    coldest=coldest,
 
-</table>
+    windiest=windiest,
 
-</div>
+    humid=humid,
 
-<script>
+    uv=uv,
 
-function updateClock() {{
+    visibility=visibility,
 
-    const now = new Date();
+    total_cities=len(weather_data)
 
-    document.getElementById("clock").innerHTML =
-        now.toLocaleTimeString("en-IN", {{
-            timeZone: "Asia/Kolkata",
-            hour: "2-digit",
-            minute: "2-digit",
-            second: "2-digit",
-            hour12: true
-        }});
+)
 
-}}
 
-updateClock();
+# ----------------------------------
+# SAVE WEBSITE
+# ----------------------------------
 
-setInterval(updateClock, 1000);
+with open(
+    "docs/index.html",
+    "w",
+    encoding="utf-8"
+) as file:
 
-</script>
-
-</body>
-</html>
-"""
-
-os.makedirs("docs", exist_ok=True)
-
-with open("docs/index.html", "w", encoding="utf-8") as file:
     file.write(html)
 
-print("\nWebsite Generated Successfully!")
+
+# ----------------------------------
+# FINISHED
+# ----------------------------------
+
+print()
+
+print("=" * 60)
+
+print("WEBSITE GENERATED SUCCESSFULLY")
+
+print("=" * 60)
+
+print()
+
+print(f"Cities Processed : {len(weather_data)}")
+
+print(
+    "Generated At :",
+    datetime.now(TIMEZONE).strftime(
+        "%d %B %Y %I:%M:%S %p"
+    )
+)
