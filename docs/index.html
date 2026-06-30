@@ -2,35 +2,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Uttarakhand 360 Weather</title>
+<title>Uttarakhand 360 | Live Weather Dashboard</title>
 
 <style>
 
-body{
-font-family:Arial;
-background:#f2f2f2;
-padding:30px;
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-background:white;
+.navbar {
+    background: #0b5394;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-th,td{
-padding:12px;
-border:1px solid #ddd;
-text-align:center;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-th{
-background:#0b5394;
-color:white;
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
 }
 
-h1{
-color:#0b5394;
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #0b5394;
+    color: white;
+}
+
+h1 {
+    color: #0b5394;
+    margin-bottom: 5px;
+}
+
+p {
+    color: #555;
 }
 
 </style>
@@ -39,11 +74,23 @@ color:#0b5394;
 
 <body>
 
-<h1>🌦 Uttarakhand 360</h1>
+<div class="navbar">
+    <div class="logo">🌦 Uttarakhand 360</div>
 
-<h2>Live Weather Dashboard</h2>
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Weather</a>
+        <a href="#">Districts</a>
+        <a href="#">Travel</a>
+        <a href="#">About</a>
+    </div>
+</div>
 
-<p><b>Last Updated:</b> 30 June 2026 08:24 PM IST</p>
+<div class="container">
+
+<h1>Live Weather Dashboard</h1>
+
+<p><strong>Last Updated:</strong> 30 June 2026 08:37 PM IST</p>
 
 <p>Automatically updated using WeatherAPI and GitHub Actions.</p>
 
@@ -68,70 +115,72 @@ color:#0b5394;
         
         <tr>
             <td>Haridwar</td>
-            <td>31.4°C</td>
+            <td>31.6°C</td>
             <td>Clear</td>
             <td>52%</td>
-            <td>8.3 km/h</td>
+            <td>7.2 km/h</td>
         </tr>
         
         <tr>
             <td>Rishikesh</td>
-            <td>27.1°C</td>
+            <td>26.8°C</td>
             <td>Patchy rain nearby</td>
-            <td>72%</td>
+            <td>75%</td>
             <td>3.6 km/h</td>
         </tr>
         
         <tr>
             <td>Mussoorie</td>
-            <td>26.4°C</td>
-            <td>Clear</td>
-            <td>62%</td>
+            <td>21.4°C</td>
+            <td>Patchy rain nearby</td>
+            <td>79%</td>
             <td>3.6 km/h</td>
         </tr>
         
         <tr>
             <td>Uttarkashi</td>
-            <td>26.4°C</td>
-            <td>Clear</td>
-            <td>62%</td>
+            <td>21.4°C</td>
+            <td>Patchy rain nearby</td>
+            <td>79%</td>
             <td>3.6 km/h</td>
         </tr>
         
         <tr>
             <td>Tehri</td>
-            <td>24.1°C</td>
+            <td>22.1°C</td>
             <td>Patchy rain nearby</td>
-            <td>65%</td>
-            <td>4.0 km/h</td>
+            <td>78%</td>
+            <td>3.6 km/h</td>
         </tr>
         
         <tr>
             <td>Chamoli</td>
             <td>11.7°C</td>
-            <td>Patchy rain nearby</td>
+            <td>Light rain shower</td>
             <td>93%</td>
             <td>3.6 km/h</td>
         </tr>
         
         <tr>
             <td>Rudraprayag</td>
-            <td>20.9°C</td>
-            <td>Patchy light drizzle</td>
-            <td>83%</td>
+            <td>20.6°C</td>
+            <td>Patchy rain nearby</td>
+            <td>84%</td>
             <td>3.6 km/h</td>
         </tr>
         
         <tr>
             <td>Pithoragarh</td>
-            <td>19.8°C</td>
+            <td>19.5°C</td>
             <td>Mist</td>
-            <td>95%</td>
-            <td>3.6 km/h</td>
+            <td>96%</td>
+            <td>4.0 km/h</td>
         </tr>
         
 
 </table>
+
+</div>
 
 </body>
 </html>
