@@ -811,7 +811,7 @@ you have successfully generated a second HTML page.
 
 with open(
 
-    "docs/test.html",
+    "docs/districts.html",
 
     "w",
 
