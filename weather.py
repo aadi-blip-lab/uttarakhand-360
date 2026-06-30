@@ -550,6 +550,10 @@ highlights = f"""
 
 <strong>{highest_uv["uv"]}</strong>
 
+<p style="font-size:13px;color:#666;">
+{"🌙 UV is 0 after sunset" if highest_uv["uv"] == 0 else "☀ Current UV Index"}
+</p>
+
 </div>
 
 <div class="highlight-card">
