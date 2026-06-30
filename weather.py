@@ -396,7 +396,7 @@ navbar = f"""
 
         <li><a href="#">Home</a></li>
 
-        <li><a href="#">Weather</a></li>
+        <li><a href="weather.html">Weather</a></li>
 
         <li><a href="districts.html">Districts</a></li>
 
