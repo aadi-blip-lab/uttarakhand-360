@@ -1,12 +1,12 @@
 CITIES = [
-    "Dehradun",
-    "Haridwar",
-    "Rishikesh",
-    "Mussoorie",
-    "Uttarkashi",
-    "Tehri",
-    "Chamoli",
-    "Rudraprayag",
-    "Nainital",
-    "Pithoragarh"
+    "Dehradun, Uttarakhand",
+    "Haridwar, Uttarakhand",
+    "Rishikesh, Uttarakhand",
+    "Mussoorie, Uttarakhand",
+    "Uttarkashi, Uttarakhand",
+    "New Tehri, Uttarakhand",
+    "Chamoli, Uttarakhand",
+    "Rudraprayag, Uttarakhand",
+    "Nainital, Uttarakhand",
+    "Pithoragarh, Uttarakhand"
 ]
