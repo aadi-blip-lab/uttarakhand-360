@@ -80,9 +80,13 @@ color:#0b5394;
 
 <body>
 
-<h1>🌦 Uttarakhand 360 Weather</h1>
+<h1>🌦 Uttarakhand 360</h1>
 
-<p><b>Last Updated:</b> {datetime.now().strftime("%d %B %Y %I:%M %p")}</p>
+<h2>Live Weather Dashboard</h2>
+
+<p><b>Last Updated:</b> {datetime.now().strftime("%d %B %Y %I:%M %p")} IST</p>
+
+<p>Automatically updated using WeatherAPI and GitHub Actions.</p>
 
 <table>
 
