@@ -1,6 +1,7 @@
 import os
 import requests
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from cities import CITIES
 
 API_KEY = os.getenv("WEATHER_API_KEY")
@@ -131,9 +132,9 @@ p {{
 
 <h1>Live Weather Dashboard</h1>
 
-<p><strong>Last Updated:</strong> {datetime.now().strftime("%d %B %Y %I:%M %p")} IST</p>
+<p><strong>🌦 Weather Last Updated:</strong> {datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %B %Y • %I:%M:%S %p")}</p>
 
-<p>Automatically updated using WeatherAPI and GitHub Actions.</p>
+<p><strong>🕒 Current India Time:</strong> <span id="clock"></span></p>
 
 <table>
 
@@ -150,6 +151,29 @@ p {{
 </table>
 
 </div>
+
+<script>
+
+function updateClock() {{
+
+    const now = new Date();
+
+    document.getElementById("clock").innerHTML =
+        now.toLocaleTimeString("en-IN", {{
+            timeZone: "Asia/Kolkata",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
+        }});
+
+}}
+
+updateClock();
+
+setInterval(updateClock, 1000);
+
+</script>
 
 </body>
 </html>
