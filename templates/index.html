@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uttarakhand 360 | Live Weather Dashboard</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background: #0b5394;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #0b5394;
+    color: white;
+}
+
+h1 {
+    color: #0b5394;
+    margin-bottom: 5px;
+}
+
+p {
+    color: #555;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">🌦 Uttarakhand 360</div>
+
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Weather</a>
+        <a href="#">Districts</a>
+        <a href="#">Travel</a>
+        <a href="#">About</a>
+    </div>
+</div>
+
+<div class="container">
+
+<h1>Live Weather Dashboard</h1>
+
+<p><strong>🌦 Weather Last Updated:</strong> 01 July 2026 • 02:17:14 AM</p>
+
+<p><strong>🕒 Current India Time:</strong> <span id="clock"></span></p>
+
+<table>
+
+<tr>
+<th>City</th>
+<th>Temperature</th>
+<th>Condition</th>
+<th>Humidity</th>
+<th>Wind</th>
+</tr>
+
+
+        <tr>
+            <td>Dehradun</td>
+            <td>25.2°C</td>
+            <td>Partly Cloudy</td>
+            <td>77%</td>
+            <td>3.6 km/h</td>
+        </tr>
+        
+        <tr>
+            <td>Haridwar</td>
+            <td>27.8°C</td>
+            <td>Patchy rain nearby</td>
+            <td>73%</td>
+            <td>5.4 km/h</td>
+        </tr>
+        
+        <tr>
+            <td>Rishikesh</td>
+            <td>26.8°C</td>
+            <td>Patchy rain nearby</td>
+            <td>75%</td>
+            <td>3.6 km/h</td>
+        </tr>
+        
+        <tr>
+            <td>Mussoorie</td>
+            <td>21.4°C</td>
+            <td>Patchy rain nearby</td>
+            <td>79%</td>
+            <td>3.6 km/h</td>
+        </tr>
+        
+        <tr>
+            <td>Uttarkashi</td>
+            <td>21.4°C</td>
+            <td>Patchy rain nearby</td>
+            <td>79%</td>
+            <td>3.6 km/h</td>
+        </tr>
+        
+        <tr>
+            <td>Tehri</td>
+            <td>22.1°C</td>
+            <td>Patchy rain nearby</td>
+            <td>78%</td>
+            <td>3.6 km/h</td>
+        </tr>
+        
+        <tr>
+            <td>Chamoli</td>
+            <td>11.7°C</td>
+            <td>Light rain shower</td>
+            <td>93%</td>
+            <td>3.6 km/h</td>
+        </tr>
+        
+        <tr>
+            <td>Rudraprayag</td>
+            <td>20.6°C</td>
+            <td>Patchy rain nearby</td>
+            <td>84%</td>
+            <td>3.6 km/h</td>
+        </tr>
+        
+        <tr>
+            <td>Pithoragarh</td>
+            <td>19.5°C</td>
+            <td>Mist</td>
+            <td>96%</td>
+            <td>4.0 km/h</td>
+        </tr>
+        
+
+</table>
+
+</div>
+
+<script>
+
+function updateClock() {
+
+    const now = new Date();
+
+    document.getElementById("clock").innerHTML =
+        now.toLocaleTimeString("en-IN", {
+            timeZone: "Asia/Kolkata",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
+        });
+
+}
+
+updateClock();
+
+setInterval(updateClock, 1000);
+
+</script>
+
+</body>
+</html>
