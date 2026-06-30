@@ -398,7 +398,7 @@ navbar = f"""
 
         <li><a href="#">Weather</a></li>
 
-        <li><a href="#">Districts</a></li>
+        <li><a href="districts.html">Districts</a></li>
 
         <li><a href="#">Char Dham</a></li>
 
