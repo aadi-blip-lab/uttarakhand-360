@@ -102,9 +102,9 @@ color:#0b5394;
 </html>
 """
 
-os.makedirs("reports", exist_ok=True)
+os.makedirs("docs", exist_ok=True)
 
-with open("reports/index.html", "w", encoding="utf-8") as file:
+with open("docs/index.html", "w", encoding="utf-8") as file:
     file.write(html)
 
 print("\nWebsite Generated Successfully!")
