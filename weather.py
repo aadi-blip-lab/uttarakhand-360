@@ -1,17 +1,22 @@
+import os
 import requests
 
-API_KEY = "YOUR_WEATHERAPI_KEY"
+API_KEY = os.getenv("WEATHER_API_KEY")
 
-CITY = "Dehradun"
+city = "Dehradun"
 
-url = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}&q={CITY}"
+url = f"https://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}"
 
 response = requests.get(url)
 
 if response.status_code == 200:
     data = response.json()
-    print(f"City: {data['location']['name']}")
-    print(f"Temperature: {data['current']['temp_c']}°C")
-    print(f"Condition: {data['current']['condition']['text']}")
+
+    print("City:", data["location"]["name"])
+    print("Temperature:", data["current"]["temp_c"], "°C")
+    print("Condition:", data["current"]["condition"]["text"])
+    print("Humidity:", data["current"]["humidity"], "%")
+    print("Wind:", data["current"]["wind_kph"], "km/h")
+
 else:
-    print("Error fetching weather")
+    print("Error:", response.text)
