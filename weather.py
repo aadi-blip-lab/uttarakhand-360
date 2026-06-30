@@ -400,7 +400,7 @@ navbar = f"""
 
         <li><a href="districts.html">Districts</a></li>
 
-        <li><a href="#">Char Dham</a></li>
+        <li><a href="chardham.html">Char Dham</a></li>
 
         <li><a href="#">Travel</a></li>
 
