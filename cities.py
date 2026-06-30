@@ -7,6 +7,5 @@ CITIES = [
     "New Tehri, Uttarakhand",
     "Chamoli, Uttarakhand",
     "Rudraprayag, Uttarakhand",
-    "Nainital, Uttarakhand",
     "Pithoragarh, Uttarakhand"
 ]
