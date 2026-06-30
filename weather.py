@@ -408,7 +408,7 @@ navbar = f"""
 
         <li><a href="#">Alerts</a></li>
 
-        <li><a href="#">About</a></li>
+        <li><a href="about.html">About</a></li>
 
         <li><a href="#">Contact</a></li>
 
