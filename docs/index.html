@@ -1,209 +1,316 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Uttarakhand 360 | Live Weather Dashboard</title>
 
-<style>
+<meta name="description"
+content="Live Weather, Travel Information, Road Conditions and Char Dham Updates across Uttarakhand.">
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    margin: 0;
-    padding: 0;
-}
+<link rel="icon" href="favicon.svg">
 
-.navbar {
-    background: #0b5394;
-    color: white;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-.menu a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-th, td {
-    padding: 14px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-}
-
-th {
-    background: #0b5394;
-    color: white;
-}
-
-h1 {
-    color: #0b5394;
-    margin-bottom: 5px;
-}
-
-p {
-    color: #555;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">🌦 Uttarakhand 360</div>
+<!-- ===========================
+     NAVIGATION
+=========================== -->
 
-    <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Weather</a>
-        <a href="#">Districts</a>
-        <a href="#">Travel</a>
-        <a href="#">About</a>
-    </div>
-</div>
+<nav class="navbar">
 
-<div class="container">
+<div class="logo">
 
-<h1>Live Weather Dashboard</h1>
-
-<p><strong>🌦 Weather Last Updated:</strong> 01 July 2026 • 02:17:14 AM</p>
-
-<p><strong>🕒 Current India Time:</strong> <span id="clock"></span></p>
-
-<table>
-
-<tr>
-<th>City</th>
-<th>Temperature</th>
-<th>Condition</th>
-<th>Humidity</th>
-<th>Wind</th>
-</tr>
-
-
-        <tr>
-            <td>Dehradun</td>
-            <td>25.2°C</td>
-            <td>Partly Cloudy</td>
-            <td>77%</td>
-            <td>3.6 km/h</td>
-        </tr>
-        
-        <tr>
-            <td>Haridwar</td>
-            <td>27.8°C</td>
-            <td>Patchy rain nearby</td>
-            <td>73%</td>
-            <td>5.4 km/h</td>
-        </tr>
-        
-        <tr>
-            <td>Rishikesh</td>
-            <td>26.8°C</td>
-            <td>Patchy rain nearby</td>
-            <td>75%</td>
-            <td>3.6 km/h</td>
-        </tr>
-        
-        <tr>
-            <td>Mussoorie</td>
-            <td>21.4°C</td>
-            <td>Patchy rain nearby</td>
-            <td>79%</td>
-            <td>3.6 km/h</td>
-        </tr>
-        
-        <tr>
-            <td>Uttarkashi</td>
-            <td>21.4°C</td>
-            <td>Patchy rain nearby</td>
-            <td>79%</td>
-            <td>3.6 km/h</td>
-        </tr>
-        
-        <tr>
-            <td>Tehri</td>
-            <td>22.1°C</td>
-            <td>Patchy rain nearby</td>
-            <td>78%</td>
-            <td>3.6 km/h</td>
-        </tr>
-        
-        <tr>
-            <td>Chamoli</td>
-            <td>11.7°C</td>
-            <td>Light rain shower</td>
-            <td>93%</td>
-            <td>3.6 km/h</td>
-        </tr>
-        
-        <tr>
-            <td>Rudraprayag</td>
-            <td>20.6°C</td>
-            <td>Patchy rain nearby</td>
-            <td>84%</td>
-            <td>3.6 km/h</td>
-        </tr>
-        
-        <tr>
-            <td>Pithoragarh</td>
-            <td>19.5°C</td>
-            <td>Mist</td>
-            <td>96%</td>
-            <td>4.0 km/h</td>
-        </tr>
-        
-
-</table>
+🌦 Uttarakhand 360
 
 </div>
 
-<script>
+<ul>
 
-function updateClock() {
+<li><a href="#">Weather</a></li>
 
-    const now = new Date();
+<li><a href="#">Travel</a></li>
 
-    document.getElementById("clock").innerHTML =
-        now.toLocaleTimeString("en-IN", {
-            timeZone: "Asia/Kolkata",
-            hour: "2-digit",
-            minute: "2-digit",
-            second: "2-digit",
-            hour12: true
-        });
+<li><a href="#">Roads</a></li>
 
-}
+<li><a href="#">Char Dham</a></li>
 
-updateClock();
+<li><a href="#">Alerts</a></li>
 
-setInterval(updateClock, 1000);
+<li><a href="#">About</a></li>
 
-</script>
+</ul>
+
+<button id="theme-toggle">
+
+🌙
+
+</button>
+
+</nav>
+
+
+
+<!-- ===========================
+     HERO
+=========================== -->
+
+<header class="hero">
+
+<h1>
+
+Uttarakhand 360
+
+</h1>
+
+<p>
+
+Your complete weather & travel companion.
+
+</p>
+
+<div class="hero-info">
+
+<div class="info-card">
+
+🌦 Weather Updated
+
+<br>
+
+<strong>
+
+30 June 2026
+
+</strong>
+
+</div>
+
+<div class="info-card">
+
+🕒 Current India Time
+
+<br>
+
+<strong id="clock">
+
+Loading...
+
+</strong>
+
+</div>
+
+</div>
+
+<div class="search-box">
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="Search city...">
+
+</div>
+
+</header>
+
+
+
+<!-- ===========================
+     TODAY'S HIGHLIGHTS
+=========================== -->
+
+<section class="highlights-section">
+
+<h2>
+
+Today's Highlights
+
+</h2>
+
+<div class="highlight-grid">
+
+<div class="highlight-card">
+
+🔥
+
+<h3>Warmest</h3>
+
+<p>Loading...</p>
+
+</div>
+
+<div class="highlight-card">
+
+❄
+
+<h3>Coldest</h3>
+
+<p>Loading...</p>
+
+</div>
+
+<div class="highlight-card">
+
+💨
+
+<h3>Windiest</h3>
+
+<p>Loading...</p>
+
+</div>
+
+<div class="highlight-card">
+
+☀
+
+<h3>Highest UV</h3>
+
+<p>Loading...</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+     WEATHER
+=========================== -->
+
+<section class="weather-section">
+
+<h2>
+
+Current Weather
+
+</h2>
+
+<div class="weather-grid">
+
+<!-- Weather cards generated by weather.py -->
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+     COMING SOON
+=========================== -->
+
+<section class="coming-soon">
+
+<h2>
+
+Coming Soon
+
+</h2>
+
+<div class="coming-grid">
+
+<div>
+
+🛕
+
+Char Dham
+
+</div>
+
+<div>
+
+🛣
+
+Road Status
+
+</div>
+
+<div>
+
+🏔
+
+Trek Weather
+
+</div>
+
+<div>
+
+⚠
+
+Alerts
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+
+<footer class="footer">
+
+<h2>
+
+Uttarakhand 360
+
+</h2>
+
+<p>
+
+Live Weather • Travel • Road Conditions
+
+</p>
+
+<p>
+
+Need to get in touch?
+
+Bring coffee first. ☕
+
+</p>
+
+<p>
+
+Powered by WeatherAPI
+
+</p>
+
+<p>
+
+© 2026 Uttarakhand 360
+
+</p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
