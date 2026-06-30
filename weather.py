@@ -35,6 +35,12 @@ cities_weather = []
 
 weather_cards = ""
 
+district_html = ""
+
+weather_page_html = ""
+
+chardham_html = ""
+
 navbar = ""
 
 hero = ""
