@@ -767,55 +767,9 @@ print("=" * 60)
 
 print()
 
-# ==========================================================
-# DISTRICTS PAGE
-# ==========================================================
+# Other pages will be generated here.
 
-district_html = f"""
-
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-<meta charset="UTF-8">
-
-<title>Districts | Uttarakhand 360</title>
-
-<link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-
-<h1>
-
-🌦 Live District Weather
-
-</h1>
-
-{weather_cards}
-
-</body>
-
-</html>
-
-"""
-
-with open(
-
-    "docs/test.html",
-
-    "w",
-
-    encoding="utf-8"
-
-) as file:
-
-    file.write(district_html)
-
-print("✓ test.html created")
+print("✓ Ready to generate additional pages.")
 
 print()
 
