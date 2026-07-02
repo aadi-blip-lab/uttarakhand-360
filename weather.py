@@ -767,7 +767,170 @@ print("=" * 60)
 
 print()
 
-# Other pages will be generated here.
+# ==========================================================
+# DISTRICT INFORMATION
+# ==========================================================
+
+GARHWAL = [
+    "Dehradun",
+    "Haridwar",
+    "Uttarkashi",
+    "Tehri Garhwal",
+    "Pauri Garhwal",
+    "Rudraprayag",
+    "Chamoli"
+]
+
+KUMAON = [
+    "Nainital",
+    "Almora",
+    "Bageshwar",
+    "Champawat",
+    "Pithoragarh",
+    "Udham Singh Nagar"
+]
+
+garhwal_cards = ""
+
+kumaon_cards = ""
+
+
+for city in cities_weather:
+
+    card = f"""
+
+<div class="weather-card">
+
+<h2>
+
+📍 {city['city']}
+
+</h2>
+
+<div class="temperature">
+
+{city['temperature']}°C
+
+</div>
+
+<p>
+
+{city['condition']}
+
+</p>
+
+<p>
+
+💧 Humidity: {city['humidity']}%
+
+</p>
+
+<p>
+
+💨 Wind: {city['wind']} km/h
+
+</p>
+
+</div>
+
+"""
+
+    if city["city"] in GARHWAL:
+
+        garhwal_cards += card
+
+    elif city["city"] in KUMAON:
+
+        kumaon_cards += card
+
+
+district_html = f"""
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Districts | Uttarakhand 360</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+{navbar}
+
+<section class="hero">
+
+<h1>
+
+🏔 Districts of Uttarakhand
+
+</h1>
+
+<p>
+
+Live Weather across all districts.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>
+
+🏔 Garhwal Region
+
+</h2>
+
+<div class="weather-grid">
+
+{garhwal_cards}
+
+</div>
+
+</section>
+
+<section>
+
+<h2>
+
+🌄 Kumaon Region
+
+</h2>
+
+<div class="weather-grid">
+
+{kumaon_cards}
+
+</div>
+
+</section>
+
+{footer}
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+"""
+
+with open(
+    "docs/districts.html",
+    "w",
+    encoding="utf-8"
+) as file:
+
+    file.write(district_html)
+
+print("✓ districts.html generated")
 
 print("✓ Ready to generate additional pages.")
 
