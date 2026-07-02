@@ -398,27 +398,29 @@ navbar = f"""
 
     </div>
 
-    <ul>
+  <ul>
 
-        <li><a href="index.html">Home</a></li>
+<li><a href="index.html">🏠 Home</a></li>
 
-        <li><a href="weather.html">Weather</a></li>
+<li><a href="weather.html">🌦 Weather</a></li>
 
-        <li><a href="districts.html">Districts</a></li>
+<li><a href="districts.html">🗺 Districts</a></li>
 
-        <li><a href="chardham.html">Char Dham</a></li>
+<li><a href="chardham.html">🛕 Char Dham</a></li>
 
-        <li><a href="#">Travel</a></li>
+<li><a href="#">🥾 Treks</a></li>
 
-        <li><a href="#">Road Status</a></li>
+<li><a href="#">📍 Places</a></li>
 
-        <li><a href="#">Alerts</a></li>
+<li><a href="#">🛣 Road Status</a></li>
 
-        <li><a href="about.html">About</a></li>
+<li><a href="#">🚨 Alerts</a></li>
 
-        <li><a href="contact.html">Contact</a></li>
+<li><a href="about.html">ℹ About</a></li>
 
-    </ul>
+<li><a href="contact.html">📞 Contact</a></li>
+
+</ul>
 
     <button id="theme-toggle">
 
