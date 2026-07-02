@@ -754,6 +754,56 @@ print()
 print("=" * 60)
 
 # ==========================================================
+# WEATHER CARD FUNCTION
+# ==========================================================
+
+def create_weather_card(city):
+
+    return f"""
+
+<div class="weather-card">
+
+<h2>
+
+📍 {city['city']}
+
+</h2>
+
+<div class="temperature">
+
+{city['temperature']}°C
+
+</div>
+
+<p>
+
+{city['condition']}
+
+</p>
+
+<p>
+
+💧 Humidity: {city['humidity']}%
+
+</p>
+
+<p>
+
+💨 Wind: {city['wind']} km/h
+
+</p>
+
+<p>
+
+👀 Visibility: {city['visibility']} km
+
+</p>
+
+</div>
+
+"""
+
+# ==========================================================
 # GENERATE OTHER PAGES
 # ==========================================================
 
