@@ -5,6 +5,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from cities import CITIES
+from blogger import publish_to_blogger
 
 
 # ==========================================================
@@ -1337,3 +1338,35 @@ print("=" * 60)
 print("ALL PAGES GENERATED")
 
 print("=" * 60)
+
+# ==========================================================
+# PUBLISH TO BLOGGER
+# ==========================================================
+
+blog_title = f"Uttarakhand Weather Update - {last_updated}"
+
+blog_content = f"""
+<h2>🌦 Uttarakhand Weather Update</h2>
+
+<p>
+The latest weather information for Uttarakhand has been published.
+</p>
+
+<h3>🔥 Today's Highlights</h3>
+
+<ul>
+<li>🔥 Warmest: {warmest['city']} ({warmest['temperature']}°C)</li>
+<li>❄ Coldest: {coldest['city']} ({coldest['temperature']}°C)</li>
+<li>💨 Windiest: {windiest['city']} ({windiest['wind']} km/h)</li>
+<li>💧 Highest Humidity: {highest_humidity['city']} ({highest_humidity['humidity']}%)</li>
+<li>☀ Highest UV: {highest_uv['city']} ({highest_uv['uv']})</li>
+</ul>
+
+<p>
+<a href="https://aadi-blip-lab.github.io/uttarakhand-360/">
+👉 Read the full weather dashboard here
+</a>
+</p>
+"""
+
+publish_to_blogger(blog_title, blog_content)
