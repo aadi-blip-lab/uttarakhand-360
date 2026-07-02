@@ -720,6 +720,30 @@ rel="stylesheet">
 
 {navbar}
 
+<section class="live-bar">
+
+<div class="info-card">
+
+🌦 Weather Updated
+
+<strong>
+
+{last_updated}
+
+</strong>
+
+</div>
+
+<div class="info-card">
+
+🕒 Current India Time
+
+<strong id="clock"></strong>
+
+</div>
+
+</section>
+
 {hero}
 
 {cards_section}
