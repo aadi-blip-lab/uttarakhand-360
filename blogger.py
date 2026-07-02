@@ -7,7 +7,7 @@ SCOPES = ["https://www.googleapis.com/auth/blogger"]
 
 
 def publish_to_blogger(title, content):
-    blog_id = os.environ["BLOG_ID"]
+    blog_id = os.environ["6527685220934804145"]
 
     creds = Credentials(
         token=None,
@@ -30,7 +30,7 @@ def publish_to_blogger(title, content):
     }
 
     result = service.posts().insert(
-        blogId=blog_id,
+        blogId=BLOG_ID,
         body=post,
         isDraft=False,
     ).execute()
