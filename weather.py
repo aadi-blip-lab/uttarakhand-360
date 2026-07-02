@@ -477,53 +477,39 @@ hero = f"""
 
 <header class="hero">
 
-    <h1>Uttarakhand 360</h1>
+<h1>
 
-    <p>
+🏔 Uttarakhand 360
 
-        {tagline}
+</h1>
 
-    </p>
+<h2>
 
-    <div class="hero-info">
+Everything You Need Before Entering the Himalayas
 
-        <div class="info-card">
+</h2>
 
-            🌦 Weather Updated
+<p>
 
-            <strong>
+Live Weather • Road Status • Char Dham • Treks • Travel • Alerts
 
-                {last_updated}
+</p>
 
-            </strong>
+<div class="hero-buttons">
 
-        </div>
+<a href="weather.html" class="btn-primary">
 
-        <div class="info-card">
+🌦 Check Weather
 
-            🕒 Current India Time
+</a>
 
-            <strong id="clock">
+<a href="chardham.html" class="btn-secondary">
 
-                Loading...
+🛕 Char Dham
 
-            </strong>
+</a>
 
-        </div>
-
-    </div>
-
-    <div class="search-box">
-
-        <input
-
-        type="text"
-
-        id="search"
-
-        placeholder="Search district or city...">
-
-    </div>
+</div>
 
 </header>
 
