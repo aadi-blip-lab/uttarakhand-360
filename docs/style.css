@@ -581,6 +581,60 @@ section p{
 
 }
 /* Weather Cards */
+
+.weather-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;
+}
+
+.weather-card{
+    background:var(--card);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:24px;
+    transition:.25s;
+}
+
+.weather-card:hover{
+    transform:translateY(-5px);
+}
+
+.weather-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.weather-header img{
+    width:48px;
+    height:48px;
+}
+
+.temperature{
+    font-size:40px;
+    font-weight:700;
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.condition{
+    color:var(--subtext);
+    margin-bottom:20px;
+}
+
+.weather-details p{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
+    color:var(--subtext);
+}
+
+.weather-details strong{
+    color:var(--text);
+}
+
 /* ==========================================================
    LARGE SCREENS
 ========================================================== */
