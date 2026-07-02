@@ -1,1 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#2563EB"></rect>
+
+  <!-- Sun -->
+  <circle cx="47" cy="17" r="6" fill="#FACC15"></circle>
+
+  <!-- Mountain -->
+  <path d="M10 50L28 22L40 38L50 26L58 50Z" fill="white"></path>
+
+</svg>
