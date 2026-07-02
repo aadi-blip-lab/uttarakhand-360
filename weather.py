@@ -746,6 +746,37 @@ rel="stylesheet">
 
 {hero}
 
+<section>
+
+<h2>🤖 Ask Uttarakhand AI (Beta)</h2>
+
+<p>
+
+Ask anything about Uttarakhand — weather, Char Dham, roads, treks, travel or destinations.
+
+</p>
+
+<div class="search-box">
+
+<input
+type="text"
+id="aiQuestion"
+placeholder="Example: Is Kedarnath good to visit this weekend?">
+
+</div>
+
+<div style="text-align:center;margin-top:20px;">
+
+<button class="button" onclick="askAI()">
+
+🚀 Ask AI
+
+</button>
+
+</div>
+
+</section>
+
 {cards_section}
 
 {highlights}
