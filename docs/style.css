@@ -1,328 +1,904 @@
-/* ===========================================
-   Uttarakhand 360 v1.0
-=========================================== */
+/* ==========================================================
+   UTTARAKHAND 360
+   Version : 2.0
+   Part 1 - Foundation
+========================================================== */
+
+/* ==========================================================
+   GOOGLE FONT
+========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+
+/* ==========================================================
+   ROOT VARIABLES
+========================================================== */
+
 :root{
+
     --primary:#2563eb;
     --primary-dark:#1d4ed8;
+
     --background:#f5f7fb;
     --card:#ffffff;
+
     --text:#111827;
     --subtext:#6b7280;
+
     --border:#e5e7eb;
+
     --shadow:0 8px 25px rgba(0,0,0,.08);
+
     --radius:14px;
+
+    --container:1320px;
+
 }
+
+
+/* ==========================================================
+   DARK MODE
+========================================================== */
 
 body.dark{
+
     --background:#0f172a;
+
     --card:#1e293b;
+
     --text:#f8fafc;
+
     --subtext:#cbd5e1;
+
     --border:#334155;
+
     --shadow:0 8px 25px rgba(0,0,0,.45);
+
 }
 
-/* Reset */
+
+/* ==========================================================
+   RESET
+========================================================== */
 
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
+
 
 html{
+
     scroll-behavior:smooth;
+
 }
+
 
 body{
+
     font-family:'Poppins',sans-serif;
+
     background:var(--background);
+
     color:var(--text);
-    transition:.3s;
+
+    line-height:1.65;
+
+    transition:.35s;
+
     opacity:0;
+
 }
 
-/* Navbar */
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+ul{
+
+    list-style:none;
+
+}
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.container{
+
+    width:min(var(--container),92%);
+
+    margin:auto;
+
+}
+
+
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+
+h1{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+}
+
+
+h2{
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+    line-height:1.3;
+
+}
+
+
+h3{
+
+    font-size:22px;
+
+}
+
+
+p{
+
+    color:var(--subtext);
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
 
 .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 8%;
-    background:var(--card);
-    box-shadow:var(--shadow);
+
     position:sticky;
+
     top:0;
-    z-index:999;
+
+    z-index:1000;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:var(--card);
+
+    box-shadow:var(--shadow);
+
 }
+
 
 .logo{
+
     font-size:26px;
+
     font-weight:700;
+
     color:var(--primary);
+
+    white-space:nowrap;
+
 }
+
 
 .navbar ul{
+
     display:flex;
-    list-style:none;
+
+    align-items:center;
+
     gap:28px;
+
 }
+
+
+.navbar li{
+
+    list-style:none;
+
+}
+
 
 .navbar a{
-    text-decoration:none;
-    color:var(--text);
+
     font-weight:500;
+
+    transition:.25s;
+
 }
+
 
 .navbar a:hover{
+
     color:var(--primary);
+
 }
+
 
 #theme-toggle{
+
     border:none;
-    background:var(--primary);
-    color:#fff;
-    padding:10px 14px;
-    border-radius:10px;
+
+    outline:none;
+
     cursor:pointer;
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:10px 14px;
+
+    border-radius:10px;
+
+    transition:.25s;
+
 }
 
-/* Hero */
+
+#theme-toggle:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   COMMON SECTION
+========================================================== */
+
+section{
+
+    width:min(var(--container),92%);
+
+    margin:70px auto;
+
+}
+
+
+section h2{
+
+    margin-bottom:25px;
+
+}
+/* ==========================================================
+   HERO
+========================================================== */
 
 .hero{
-    max-width:1200px;
-    margin:60px auto;
-    padding:0 20px;
+
+    width:min(var(--container),92%);
+
+    margin:70px auto 40px;
+
     text-align:center;
+
 }
 
 .hero h1{
-    font-size:48px;
-    margin-bottom:10px;
+
+    margin-bottom:18px;
+
+}
+
+.hero h2{
+
+    font-size:28px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
 }
 
 .hero p{
-    color:var(--subtext);
+
+    max-width:760px;
+
+    margin:0 auto;
+
     font-size:18px;
-}
-
-/* Info Cards */
-
-.hero-info{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-    margin:35px 0;
-}
-
-.info-card{
-    background:var(--card);
-    box-shadow:var(--shadow);
-    border-radius:var(--radius);
-    padding:20px;
-    min-width:250px;
-}
-
-/* Search */
-
-.search-box{
-    margin-top:30px;
-}
-
-.search-box input{
-    width:100%;
-    max-width:550px;
-    padding:15px;
-    border:1px solid var(--border);
-    border-radius:12px;
-    font-size:16px;
-    outline:none;
-}
-
-.search-box input:focus{
-    border-color:var(--primary);
-}
-
-/* Section */
-
-section{
-    max-width:1200px;
-    margin:60px auto;
-    padding:0 20px;
-}
-
-section h2{
-    margin-bottom:25px;
-}
-
-/* Highlights */
-
-.highlight-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;
-}
-
-.highlight-card{
-    background:var(--card);
-    padding:22px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    text-align:center;
-}
-
-.highlight-card h3{
-    margin:10px 0;
-}
-
-/* Weather Cards */
-
-.weather-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:24px;
-}
-
-.weather-card{
-    background:var(--card);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:24px;
-    transition:.25s;
-}
-
-.weather-card:hover{
-    transform:translateY(-5px);
-}
-
-.weather-header{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:15px;
-}
-
-.weather-header img{
-    width:48px;
-    height:48px;
-}
-
-.temperature{
-    font-size:40px;
-    font-weight:700;
-    color:var(--primary);
-    margin-bottom:10px;
-}
-
-.condition{
-    color:var(--subtext);
-    margin-bottom:20px;
-}
-
-.weather-details p{
-    display:flex;
-    justify-content:space-between;
-    margin:10px 0;
-    color:var(--subtext);
-}
-
-.weather-details strong{
-    color:var(--text);
-}
-
-/* Coming Soon */
-
-.coming-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;
-}
-
-.coming-grid div{
-    background:var(--card);
-    padding:24px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    text-align:center;
-    font-weight:600;
-}
-
-/* Footer */
-
-.footer{
-    margin-top:80px;
-    padding:50px 20px;
-    background:var(--card);
-    text-align:center;
-    border-top:1px solid var(--border);
-}
-
-.footer h2{
-    color:var(--primary);
-    margin-bottom:15px;
-}
-
-.footer p{
-    margin:8px 0;
-    color:var(--subtext);
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-    .navbar{
-        flex-direction:column;
-        gap:18px;
-    }
-
-    .navbar ul{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .hero h1{
-        font-size:34px;
-    }
-
-    .hero-info{
-        flex-direction:column;
-    }
 
 }
+
+/* ==========================================================
+   HERO BUTTONS
+========================================================== */
+
 .hero-buttons{
-    margin-top:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-top:35px;
+
 }
 
 .hero-buttons a{
-    display:inline-block;
-    margin:8px;
-    padding:14px 26px;
-    text-decoration:none;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:180px;
+
+    padding:15px 28px;
+
     border-radius:12px;
-    font-weight:bold;
-    transition:0.3s;
+
+    font-weight:600;
+
+    transition:.30s;
+
 }
 
 .btn-primary{
-    background:#2563eb;
+
+    background:var(--primary);
+
     color:white;
+
 }
 
 .btn-primary:hover{
-    transform:translateY(-3px);
+
+    background:var(--primary-dark);
+
+    transform:translateY(-4px);
+
 }
 
 .btn-secondary{
-    background:white;
-    color:#2563eb;
-    border:2px solid #2563eb;
+
+    background:var(--card);
+
+    color:var(--primary);
+
+    border:2px solid var(--primary);
+
 }
 
 .btn-secondary:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================================================
+   LIVE UPDATE BAR
+========================================================== */
+
+.live-bar{
+
+    width:min(var(--container),92%);
+
+    margin:35px auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:28px;
+
+}
+
+.info-card{
+
+    background:var(--card);
+
+    box-shadow:var(--shadow);
+
+    border-radius:var(--radius);
+
+    padding:20px 28px;
+
+    min-width:260px;
+
+    text-align:center;
+
+}
+
+.info-card strong{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:var(--primary);
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   SEARCH
+========================================================== */
+
+.search-box{
+
+    width:min(650px,100%);
+
+    margin:40px auto;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:var(--card);
+
+    color:var(--text);
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+.search-box input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.10);
+
+}
+
+/* ==========================================================
+   SECTIONS
+========================================================== */
+
+section{
+
+    width:min(var(--container),92%);
+
+    margin:75px auto;
+
+}
+
+section h2{
+
+    margin-bottom:28px;
+
+}
+
+section p{
+
+    margin-bottom:15px;
+
+}
+
+/* ==========================================================
+   COMMON BUTTON
+========================================================== */
+
+.button{
+
+    display:inline-block;
+
+    padding:14px 24px;
+
+    border-radius:10px;
+
+    background:var(--primary);
+
+    color:white;
+
+    transition:.30s;
+
+}
+
+.button:hover{
+
+    background:var(--primary-dark);
+
     transform:translateY(-3px);
+
+}
+
+/* ==========================================================
+   SMALL ANIMATIONS
+========================================================== */
+
+.weather-card,
+.highlight-card,
+.info-card{
+
+    transition:.30s ease;
+
+}
+
+.weather-card:hover,
+.highlight-card:hover,
+.info-card:hover{
+
+    transform:translateY(-5px);
+
+}
+/* Weather Cards */
+/* ==========================================================
+   LARGE SCREENS
+========================================================== */
+
+@media (min-width:1600px){
+
+    :root{
+
+        --container:1400px;
+
+    }
+
+}
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media (max-width:1200px){
+
+    .navbar{
+
+        padding:18px 5%;
+
+    }
+
+    .hero h1{
+
+        font-size:46px;
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px){
+
+    h1{
+
+        font-size:42px;
+
+    }
+
+    h2{
+
+        font-size:28px;
+
+    }
+
+    .hero h2{
+
+        font-size:24px;
+
+    }
+
+    .weather-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .highlight-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    body{
+
+        font-size:15px;
+
+    }
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:18px;
+
+        padding:18px;
+
+    }
+
+    .navbar ul{
+
+        width:100%;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        gap:16px;
+
+    }
+
+    .logo{
+
+        font-size:24px;
+
+    }
+
+    h1{
+
+        font-size:34px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .hero{
+
+        margin:50px auto 30px;
+
+    }
+
+    .hero h2{
+
+        font-size:22px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .hero-buttons a{
+
+        width:100%;
+
+        max-width:320px;
+
+    }
+
+    .live-bar{
+
+        flex-direction:column;
+
+        gap:18px;
+
+    }
+
+    .info-card{
+
+        width:100%;
+
+        max-width:360px;
+
+    }
+
+    .weather-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .highlight-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .coming-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    section{
+
+        margin:60px auto;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media (max-width:480px){
+
+    h1{
+
+        font-size:28px;
+
+    }
+
+    h2{
+
+        font-size:22px;
+
+    }
+
+    .hero p{
+
+        font-size:15px;
+
+    }
+
+    .temperature{
+
+        font-size:38px;
+
+    }
+
+    .weather-card{
+
+        padding:22px;
+
+    }
+
+    .info-card{
+
+        min-width:100%;
+
+    }
+
+    #theme-toggle{
+
+        width:100%;
+
+    }
+
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--background);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* ==========================================================
+   SELECTION
+========================================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ==========================================================
+   SMOOTH FADE
+========================================================== */
+
+body{
+
+    animation:fadeIn .5s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
 }
