@@ -7,7 +7,7 @@ SCOPES = ["https://www.googleapis.com/auth/blogger"]
 
 
 def publish_to_blogger(title, content):
-    blog_id = os.environ["6527685220934804145"]
+    blog_id = "6527685220934804145"
 
     creds = Credentials(
         token=None,
