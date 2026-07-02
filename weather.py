@@ -1347,26 +1347,41 @@ print("=" * 60)
 blog_title = f"Uttarakhand Weather Update - {last_updated}"
 
 blog_content = f"""
-<h2>🌦 Uttarakhand Weather Update</h2>
+<h1>🌦 Uttarakhand Weather Update</h1>
+
+<h3 style="color:red;">🚧 STILL IN BETA 🚧</h3>
 
 <p>
-The latest weather information for Uttarakhand has been published.
+This automated weather update is part of the ongoing development of
+<strong>Uttarakhand 360</strong>.
+New features are being added regularly.
 </p>
 
-<h3>🔥 Today's Highlights</h3>
+<hr>
+
+<h2>🔥 Today's Highlights</h2>
 
 <ul>
-<li>🔥 Warmest: {warmest['city']} ({warmest['temperature']}°C)</li>
-<li>❄ Coldest: {coldest['city']} ({coldest['temperature']}°C)</li>
-<li>💨 Windiest: {windiest['city']} ({windiest['wind']} km/h)</li>
-<li>💧 Highest Humidity: {highest_humidity['city']} ({highest_humidity['humidity']}%)</li>
-<li>☀ Highest UV: {highest_uv['city']} ({highest_uv['uv']})</li>
+<li>🔥 Warmest : <strong>{warmest['city']}</strong> ({warmest['temperature']}°C)</li>
+<li>❄ Coldest : <strong>{coldest['city']}</strong> ({coldest['temperature']}°C)</li>
+<li>💨 Windiest : <strong>{windiest['city']}</strong> ({windiest['wind']} km/h)</li>
+<li>💧 Highest Humidity : <strong>{highest_humidity['city']}</strong> ({highest_humidity['humidity']}%)</li>
+<li>☀ Highest UV : <strong>{highest_uv['city']}</strong> ({highest_uv['uv']})</li>
+<li>👀 Best Visibility : <strong>{best_visibility['city']}</strong> ({best_visibility['visibility']} km)</li>
 </ul>
 
+<hr>
+
 <p>
-<a href="https://aadi-blip-lab.github.io/uttarakhand-360/">
-👉 Read the full weather dashboard here
+👉 <a href="https://YOUR_GITHUB_PAGES_URL">
+Read the complete live dashboard
 </a>
+</p>
+
+<hr>
+
+<p style="color:gray;font-size:13px;">
+Generated automatically by Uttarakhand 360.
 </p>
 """
 
