@@ -982,6 +982,273 @@ with open(
 
 print("✓ districts.html generated")
 
+# ==========================================================
+# WEATHER PAGE
+# ==========================================================
+
+print("Generating weather.html...")
+
+weather_cards = ""
+
+for city in cities_weather:
+
+    weather_cards += create_weather_card(city)
+
+    weather_html = f"""
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weather | Uttarakhand 360</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+{navbar}
+
+<section class="hero">
+
+<h1>
+
+🌦 Uttarakhand Weather
+
+</h1>
+
+<h2>
+
+Don't be a Gamma in a Land of Lama.
+
+</h2>
+
+<p>
+
+Live Weather • Travel • Mountains • Adventure
+
+</p>
+
+</section>
+
+<section>
+
+<h2>
+
+🌤 Live Weather Across Uttarakhand
+
+</h2>
+
+<div class="weather-grid">
+
+{weather_cards}
+
+</div>
+
+</section>
+
+{footer}
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+"""
+
+with open(
+    "docs/weather.html",
+    "w",
+    encoding="utf-8"
+) as file:
+
+    file.write(weather_html)
+
+print("✓ weather.html generated")
+
+# ==========================================================
+# CHAR DHAM WEATHER
+# ==========================================================
+
+print("Generating chardham.html...")
+
+dham_districts = {
+    "Kedarnath": "Rudraprayag",
+    "Badrinath": "Chamoli",
+    "Gangotri": "Uttarkashi",
+    "Yamunotri": "Uttarkashi"
+}
+
+char_dham_cards = ""
+
+for city in cities_weather:
+
+    if city["city"] in ["Rudraprayag", "Chamoli", "Uttarkashi"]:
+
+        if city["city"] == "Rudraprayag":
+            dham = "🛕 Kedarnath"
+
+        elif city["city"] == "Chamoli":
+            dham = "🛕 Badrinath"
+
+        else:
+
+            char_dham_cards += f"""
+
+<div class="weather-card">
+
+<h2>
+
+🛕 Gangotri
+
+</h2>
+
+<p>
+
+📍 Uttarkashi
+
+</p>
+
+{create_weather_card(city)}
+
+</div>
+
+"""
+
+            dham = "🛕 Yamunotri"
+
+        char_dham_cards += f"""
+
+<div class="weather-card">
+
+<h2>
+
+{dham}
+
+</h2>
+
+<p>
+
+📍 {city['city']}
+
+</p>
+
+{create_weather_card(city)}
+
+</div>
+
+"""
+
+chardham_html = f"""
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Char Dham | Uttarakhand 360</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+{navbar}
+
+<section class="hero">
+
+<h1>
+
+🛕 Char Dham Yatra
+
+</h1>
+
+<p>
+
+Travel with Faith • Respect Nature • Leave No Trace
+
+</p>
+
+</section>
+
+<section>
+
+<h2>
+
+🙏 Please Respect the Dhaam
+
+</h2>
+
+<div class="weather-card">
+
+<p>
+
+Char Dham is one of the holiest pilgrimage circuits in India.
+
+Please remember this is a sacred place of worship before it is a tourist destination.
+
+Travel respectfully,
+keep the surroundings clean,
+and honour local customs and traditions.
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>
+
+🌦 Live Char Dham Weather
+
+</h2>
+
+<div class="weather-grid">
+
+{char_dham_cards}
+
+</div>
+
+</section>
+
+{footer}
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+"""
+
+with open(
+    "docs/chardham.html",
+    "w",
+    encoding="utf-8"
+) as file:
+
+    file.write(chardham_html)
+
+print("✓ chardham.html generated")
+
 print("✓ Ready to generate additional pages.")
 
 print()
