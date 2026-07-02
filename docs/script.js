@@ -128,3 +128,28 @@ window.addEventListener("load", () => {
     document.body.style.opacity = "1";
 
 });
+function askAI() {
+
+    const question = document
+        .getElementById("aiQuestion")
+        .value
+        .trim();
+
+    if (question === "") {
+
+        alert("Please enter a question.");
+
+        return;
+
+    }
+
+    const prompt =
+        "You are Uttarakhand 360. Answer only questions related to Uttarakhand. " +
+        question;
+
+    window.open(
+        "https://chat.openai.com/",
+        "_blank"
+    );
+
+}
