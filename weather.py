@@ -1073,6 +1073,7 @@ weather_cards = ""
 for city in cities_weather:
 
     weather_cards += create_weather_card(city)
+#
 
     weather_html = f"""
 
