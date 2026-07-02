@@ -1,30 +1,41 @@
-from google_auth_oauthlib.flow import InstalledAppFlow
+import os
+from google.oauth2.credentials import Credentials
+from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 
 SCOPES = ["https://www.googleapis.com/auth/blogger"]
-BLOG_ID = "2861908869738357216"
 
 
 def publish_to_blogger(title, content):
-    flow = InstalledAppFlow.from_client_secrets_file(
-        "client_secret.json",
-        SCOPES
+    blog_id = os.environ["BLOG_ID"]
+
+    creds = Credentials(
+        token=None,
+        refresh_token=os.environ["BLOGGER_REFRESH_TOKEN"],
+        token_uri="https://oauth2.googleapis.com/token",
+        client_id=os.environ["BLOGGER_CLIENT_ID"],
+        client_secret=os.environ["BLOGGER_CLIENT_SECRET"],
+        scopes=SCOPES,
     )
 
-    creds = flow.run_local_server(port=0)
+    # Exchange the refresh token for a fresh access token
+    creds.refresh(Request())
 
     service = build("blogger", "v3", credentials=creds)
 
     post = {
+        "kind": "blogger#post",
         "title": title,
-        "content": content
+        "content": content,
     }
 
     result = service.posts().insert(
-        blogId=BLOG_ID,
+        blogId=blog_id,
         body=post,
-        isDraft=False
+        isDraft=False,
     ).execute()
 
     print("✅ Blogger post published!")
     print(result["url"])
+
+    return result["url"]
