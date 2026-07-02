@@ -1373,7 +1373,7 @@ New features are being added regularly.
 <hr>
 
 <p>
-👉 <a href="https://YOUR_GITHUB_PAGES_URL">
+👉 <a href="https://aadi-blip-lab.github.io/uttarakhand-360">
 Read the complete live dashboard
 </a>
 </p>
