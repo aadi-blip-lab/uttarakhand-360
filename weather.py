@@ -47,7 +47,43 @@ hero = ""
 
 highlights = ""
 
-footer = ""
+footer = f"""
+
+<footer class="footer">
+
+<h2>
+
+🌦 Uttarakhand 360
+
+</h2>
+
+<p>
+
+Weather • Districts • Char Dham • Travel • Treks • Road Status
+
+</p>
+
+<p>
+
+Made with ❤️ for Dev Bhoomi Uttarakhand.
+
+</p>
+
+<p>
+
+Weather data updates every hour.
+
+</p>
+
+<p>
+
+© 2026 Uttarakhand 360
+
+</p>
+
+</footer>
+
+"""
 
 html = ""
 
