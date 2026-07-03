@@ -608,7 +608,7 @@ highlights = f"""
 # CURRENT WEATHER SECTION
 # ==========================================================
 
-ccards_section = """
+cards_section = """
 
 <section class="weather-preview">
 
