@@ -1135,7 +1135,7 @@ Live Weather • Travel • Mountains • Adventure
 
 <input
 type="text"
-id="weatherSearch"
+id="search"
 placeholder="🔍 Search a city...">
 
 </div>
