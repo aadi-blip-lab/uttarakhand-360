@@ -608,19 +608,23 @@ highlights = f"""
 # CURRENT WEATHER SECTION
 # ==========================================================
 
-cards_section = f"""
+ccards_section = """
 
-<section class="weather-section">
+<section class="weather-preview">
 
-<h2>
+<h2>🌦 Live Weather Across Uttarakhand</h2>
 
-Current Weather
+<p>
+View real-time weather for all districts, Char Dham routes and trekking destinations.
+</p>
 
-</h2>
+<div style="text-align:center;margin-top:25px;">
 
-<div class="weather-grid">
+<a href="weather.html" class="btn-primary">
 
-{weather_cards}
+🌦 View Live Weather
+
+</a>
 
 </div>
 
