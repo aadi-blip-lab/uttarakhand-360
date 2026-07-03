@@ -1079,7 +1079,7 @@ for city in cities_weather:
     weather_cards += create_weather_card(city)
 #
 
-    weather_html = f"""
+weather_html = f"""
 
 <!DOCTYPE html>
 
@@ -1130,6 +1130,17 @@ Live Weather • Travel • Mountains • Adventure
 🌤 Live Weather Across Uttarakhand
 
 </h2>
+
+<div class="search-box">
+
+<input
+type="text"
+id="weatherSearch"
+placeholder="🔍 Search a city...">
+
+</div>
+
+<br>
 
 <div class="weather-grid">
 
