@@ -3,7 +3,7 @@ name: Uttarakhand Weather
 on:
   workflow_dispatch:
   schedule:
-    - cron: '19 * * * *'
+    - cron: '*/20 * * * *'
 
 permissions:
   contents: write
