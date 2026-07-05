@@ -5,6 +5,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from cities import CITIES
+from districts import DISTRICTS
 from blogger import publish_to_blogger
 
 
