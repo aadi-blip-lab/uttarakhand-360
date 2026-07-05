@@ -1406,6 +1406,65 @@ print("ALL PAGES GENERATED")
 print("=" * 60)
 
 # ==========================================================
+# ALERTS PAGE
+# ==========================================================
+
+print("Generating alerts.html...")
+
+alert_cards = ""
+
+for alert in ALERTS:
+
+    color = "🟢"
+
+    if alert["type"] == "advisory":
+        color = "🟡"
+
+    elif alert["type"] == "warning":
+        color = "🟠"
+
+    elif alert["type"] == "emergency":
+        color = "🔴"
+
+    alert_cards += f"""
+
+<div class="weather-card">
+
+<h2>
+
+{color} {alert['title']}
+
+</h2>
+
+<p>
+
+<b>📍 Area:</b> {alert['district']}
+
+</p>
+
+<p>
+
+<b>🏛 Source:</b> {alert['source']}
+
+</p>
+
+<p>
+
+<b>🕒 Issued:</b> {alert['issued'] if alert['issued'] else 'Latest Check'}
+
+</p>
+
+<p>
+
+{alert['message']}
+
+</p>
+
+</div>
+
+"""
+
+# ==========================================================
 # PUBLISH TO BLOGGER
 # ==========================================================
 
