@@ -1360,44 +1360,114 @@ print("=" * 60)
 # PUBLISH TO BLOGGER
 # ==========================================================
 
-blog_title = f"Uttarakhand Weather Update - {last_updated}"
+blog_title = f"🌦 Uttarakhand Weather Brief | {last_updated}"
 
 blog_content = f"""
-<h1>🌦 Uttarakhand Weather Update</h1>
+<h1>🌦 Uttarakhand Weather Brief</h1>
 
-<h3 style="color:red;">🚧 STILL IN BETA 🚧</h3>
+<p><strong>{last_updated}</strong></p>
+
+<hr>
+
+<h2>🚧 Uttarakhand 360 is currently in BETA</h2>
 
 <p>
-This automated weather update is part of the ongoing development of
-<strong>Uttarakhand 360</strong>.
-New features are being added regularly.
+Welcome to the early version of <strong>Uttarakhand 360</strong>.
+We're constantly adding new features including district weather,
+Char Dham updates, road conditions, travel information and much more.
+Thank you for being part of the journey!
 </p>
 
 <hr>
 
-<h2>🔥 Today's Highlights</h2>
+<h2>🔥 Today's Weather Highlights</h2>
 
 <ul>
-<li>🔥 Warmest : <strong>{warmest['city']}</strong> ({warmest['temperature']}°C)</li>
-<li>❄ Coldest : <strong>{coldest['city']}</strong> ({coldest['temperature']}°C)</li>
-<li>💨 Windiest : <strong>{windiest['city']}</strong> ({windiest['wind']} km/h)</li>
-<li>💧 Highest Humidity : <strong>{highest_humidity['city']}</strong> ({highest_humidity['humidity']}%)</li>
-<li>☀ Highest UV : <strong>{highest_uv['city']}</strong> ({highest_uv['uv']})</li>
-<li>👀 Best Visibility : <strong>{best_visibility['city']}</strong> ({best_visibility['visibility']} km)</li>
+<li>🔥 Warmest Place: <strong>{warmest['city']}</strong> ({warmest['temperature']}°C)</li>
+
+<li>❄ Coldest Place: <strong>{coldest['city']}</strong> ({coldest['temperature']}°C)</li>
+
+<li>💨 Strongest Winds: <strong>{windiest['city']}</strong> ({windiest['wind']} km/h)</li>
+
+<li>💧 Highest Humidity: <strong>{highest_humidity['city']}</strong> ({highest_humidity['humidity']}%)</li>
+
+<li>☀ Highest UV: <strong>{highest_uv['city']}</strong></li>
+
+<li>👀 Best Visibility: <strong>{best_visibility['city']}</strong></li>
 </ul>
 
 <hr>
 
+<h2>🏔 Live Coverage Available</h2>
+
 <p>
-👉 <a href="https://aadi-blip-lab.github.io/uttarakhand-360">
-Read the complete live dashboard
-</a>
+✅ Major Cities<br>
+✅ Hill Stations<br>
+✅ District Headquarters<br>
+✅ Char Dham Route<br>
+✅ Tourist Destinations<br>
+✅ Hourly Weather Updates
+</p>
+
+<p>
+📍 Covering <strong>30+ destinations</strong> across Uttarakhand.
 </p>
 
 <hr>
 
-<p style="color:gray;font-size:13px;">
-Generated automatically by Uttarakhand 360.
+<h2>🛕 Want More?</h2>
+
+<p>
+✔ Live Weather Dashboard<br>
+✔ Char Dham Conditions<br>
+✔ District-wise Weather<br>
+✔ Mountain Destinations<br>
+✔ Travel Information<br>
+✔ Hourly Updates
+</p>
+
+<p>
+<strong>All available on Uttarakhand 360.</strong>
+</p>
+
+<hr>
+
+<div style="text-align:center;padding:20px;background:#f5f5f5;border-radius:10px;">
+
+<h2>🌐 Explore the Complete Dashboard</h2>
+
+<p>
+Real-time weather for 30+ destinations across Uttarakhand.
+</p>
+
+<p>
+
+<a href="https://aadi-blip-lab.github.io/uttarakhand-360/"
+style="
+background:#0d6efd;
+color:white;
+padding:12px 24px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+">
+Visit Uttarakhand 360 →
+</a>
+
+</p>
+
+</div>
+
+<hr>
+
+<p style="font-size:13px;color:#777;text-align:center;">
+
+Generated automatically by Uttarakhand 360.<br>
+
+Weather updates every hour.<br>
+
+More exciting features coming soon.
+
 </p>
 """
 
