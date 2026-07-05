@@ -1088,6 +1088,8 @@ Official district weather across Garhwal and Kumaon.
 
 </section>
 
+{support_section}
+
 {footer}
 
 <script src="script.js"></script>
@@ -1192,6 +1194,8 @@ placeholder="🔍 Search district, city, hill station or Char Dham...">
 </div>
 
 </section>
+
+{support_section}
 
 {footer}
 
@@ -1367,6 +1371,8 @@ and honour local customs and traditions.
 </div>
 
 </section>
+
+{support_section}
 
 {footer}
 
