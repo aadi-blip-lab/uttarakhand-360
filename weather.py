@@ -560,13 +560,13 @@ Everything You Need Before Entering the Himalayas
 
 <a href="weather.html" class="btn-primary">
 
-🌦 Check Weather
+🌦 Live Weather
 
 </a>
 
-<a href="chardham.html" class="btn-secondary">
+<a href="districts.html" class="btn-secondary">
 
-🛕 Char Dham
+🗺 Explore Districts
 
 </a>
 
