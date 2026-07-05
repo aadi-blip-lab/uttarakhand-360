@@ -6,6 +6,7 @@ from zoneinfo import ZoneInfo
 
 from cities import CITIES
 from districts import DISTRICTS
+from alerts import ALERTS
 from blogger import publish_to_blogger
 
 
