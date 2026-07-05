@@ -959,76 +959,40 @@ print()
 # DISTRICT INFORMATION
 # ==========================================================
 
-GARHWAL = [
-    "Dehradun",
-    "Haridwar",
-    "Uttarkashi",
-    "Tehri Garhwal",
-    "Pauri Garhwal",
-    "Rudraprayag",
-    "Chamoli"
-]
-
-KUMAON = [
-    "Nainital",
-    "Almora",
-    "Bageshwar",
-    "Champawat",
-    "Pithoragarh",
-    "Udham Singh Nagar"
-]
+print("Generating districts.html...")
 
 garhwal_cards = ""
-
 kumaon_cards = ""
 
-
-for city in cities_weather:
+for district in district_weather:
 
     card = f"""
-
 <div class="weather-card">
 
-<h2>
-
-📍 {city['city']}
-
-</h2>
+<h2>📍 {district['city']}</h2>
 
 <div class="temperature">
-
-{city['temperature']}°C
-
+{district['temperature']}°C
 </div>
 
-<p>
+<p>{district['condition']}</p>
 
-{city['condition']}
+<p>🌡 Feels Like: {district['feels_like']}°C</p>
 
-</p>
+<p>💧 Humidity: {district['humidity']}%</p>
 
-<p>
+<p>💨 Wind: {district['wind']} km/h</p>
 
-💧 Humidity: {city['humidity']}%
+<p>👀 Visibility: {district['visibility']} km</p>
 
-</p>
-
-<p>
-
-💨 Wind: {city['wind']} km/h
-
-</p>
+<p>☀ UV Index: {district['uv']}</p>
 
 </div>
-
 """
 
-    if city["city"] in GARHWAL:
-
+    if district["division"] == "Garhwal":
         garhwal_cards += card
-
-    elif city["city"] in KUMAON:
-
+    else:
         kumaon_cards += card
 
 
@@ -1042,6 +1006,8 @@ district_html = f"""
 
 <meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Districts | Uttarakhand 360</title>
 
 <link rel="stylesheet" href="style.css">
@@ -1054,27 +1020,17 @@ district_html = f"""
 
 <section class="hero">
 
-<h1>
-
-🏔 Districts of Uttarakhand
-
-</h1>
+<h1>🗺 Districts of Uttarakhand</h1>
 
 <p>
-
-Live Weather across all districts.
-
+Official district weather across Garhwal and Kumaon.
 </p>
 
 </section>
 
 <section>
 
-<h2>
-
-🏔 Garhwal Region
-
-</h2>
+<h2>🏔 Garhwal Division</h2>
 
 <div class="weather-grid">
 
@@ -1086,11 +1042,7 @@ Live Weather across all districts.
 
 <section>
 
-<h2>
-
-🌄 Kumaon Region
-
-</h2>
+<h2>🌄 Kumaon Division</h2>
 
 <div class="weather-grid">
 
