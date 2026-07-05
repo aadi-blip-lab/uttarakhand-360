@@ -692,6 +692,37 @@ View real-time weather for all districts, Char Dham routes and trekking destinat
 
 """
 # ==========================================================
+# SUPPORT SECTION
+# ==========================================================
+
+support_section = """
+
+<section class="support-section">
+
+<h2>
+
+❤️ Support Uttarakhand 360
+
+</h2>
+
+<p>
+
+Uttarakhand 360 is an independent project built for travellers, pilgrims, trekkers and locals.
+
+Your support helps us improve weather coverage, road updates, Char Dham information and build new features.
+
+</p>
+
+<a href="#" class="btn-primary">
+
+❤️ Support the Project
+
+</a>
+
+</section>
+
+"""
+# ==========================================================
 # FOOTER
 # ==========================================================
 
@@ -844,25 +875,7 @@ placeholder="Example: Is Kedarnath good to visit this weekend?">
 
 {highlights}
 
-<section class="support-section">
-
-<h2>❤️ Support Uttarakhand 360</h2>
-
-<p>
-
-Uttarakhand 360 is an independent project built for travellers, pilgrims, trekkers and locals.
-
-Your support helps us improve weather coverage, road updates, Char Dham information and build new features.
-
-</p>
-
-<a href="#" class="btn-primary">
-
-❤️ Support the Project
-
-</a>
-
-</section>
+{support_section}
 
 {footer}
 <script src="script.js"></script>
