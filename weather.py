@@ -546,7 +546,13 @@ Everything You Need Before Entering the Himalayas
 
 <p>
 
-Live Weather • Road Status • Char Dham • Treks • Travel • Alerts
+🌦 Live Weather • 🗺 13 Official Districts • 🛕 Char Dham • 🥾 Treks • 🛣 Roads • 🚨 Alerts
+
+</p>
+
+<p style="margin-top:18px;font-size:18px;font-weight:600;color:#0d6efd;">
+
+📍 Covering 100+ Locations Across Uttarakhand
 
 </p>
 
