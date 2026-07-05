@@ -501,7 +501,7 @@ navbar = f"""
 
 <li><a href="#">🥾 Treks</a></li>
 
-<li><a href="#">📍 Places</a></li>
+<li><a href="#">🧭 Destinations</a></li>
 
 <li><a href="#">🛣 Road Status</a></li>
 
@@ -552,7 +552,7 @@ Everything You Need Before Entering the Himalayas
 
 <p style="margin-top:18px;font-size:18px;font-weight:600;color:#0d6efd;">
 
-📍 Covering 100+ Locations Across Uttarakhand
+📍 Covering 13 Districts • 100+ Locations • Updated Every Hour
 
 </p>
 
@@ -595,7 +595,7 @@ highlights = f"""
 
 <div class="highlight-card">
 
-<h3>🔥 Warmest</h3>
+<h3>🔥 Warmest District</h3>
 
 <p>{warmest["city"]}</p>
 
@@ -605,7 +605,7 @@ highlights = f"""
 
 <div class="highlight-card">
 
-<h3>❄ Coldest</h3>
+<h3>❄ Coldest District</h3>
 
 <p>{coldest["city"]}</p>
 
@@ -615,7 +615,7 @@ highlights = f"""
 
 <div class="highlight-card">
 
-<h3>💨 Windiest</h3>
+<h3>💨 Windiest District</h3>
 
 <p>{windiest["city"]}</p>
 
@@ -625,7 +625,7 @@ highlights = f"""
 
 <div class="highlight-card">
 
-<h3>💧 Highest Humidity</h3>
+<h3>💧 Most Humid District</h3>
 
 <p>{highest_humidity["city"]}</p>
 
@@ -711,9 +711,7 @@ Live Weather • Travel • Road Conditions • Char Dham
 
 <p>
 
-Need to get in touch?
-
-Bring coffee first. ☕
+Reliable weather information for travellers, pilgrims and locals across Uttarakhand.
 
 </p>
 
@@ -729,7 +727,7 @@ Bring coffee first. ☕
 
 <p>
 
-Powered by WeatherAPI
+Powered by WeatherAPI • Updated Hourly
 
 </p>
 
@@ -813,7 +811,7 @@ rel="stylesheet">
 
 <section>
 
-<h2>🤖 Ask Uttarakhand AI (Beta)</h2>
+<h2>🤖 Uttarakhand Assistant (Beta)</h2>
 
 <p>
 
@@ -834,7 +832,7 @@ placeholder="Example: Is Kedarnath good to visit this weekend?">
 
 <button class="button" onclick="askAI()">
 
-🚀 Ask AI
+💬 Ask Assistant
 
 </button>
 
@@ -846,8 +844,27 @@ placeholder="Example: Is Kedarnath good to visit this weekend?">
 
 {highlights}
 
-{footer}
+<section class="support-section">
 
+<h2>❤️ Support Uttarakhand 360</h2>
+
+<p>
+
+Uttarakhand 360 is an independent project built for travellers, pilgrims, trekkers and locals.
+
+Your support helps us improve weather coverage, road updates, Char Dham information and build new features.
+
+</p>
+
+<a href="#" class="btn-primary">
+
+❤️ Support the Project
+
+</a>
+
+</section>
+
+{footer}
 <script src="script.js"></script>
 
 </body>
@@ -1123,13 +1140,13 @@ weather_html = f"""
 
 <h2>
 
-Don't be a Gamma in a Land of Lama.
+Plan Your Journey with Live Weather Across Uttarakhand
 
 </h2>
 
 <p>
 
-Live Weather • Travel • Mountains • Adventure
+100+ Locations • Updated Hourly • Districts • Char Dham • Treks
 
 </p>
 
@@ -1139,7 +1156,8 @@ Live Weather • Travel • Mountains • Adventure
 
 <h2>
 
-🌤 Live Weather Across Uttarakhand
+🌦 Live Weather Across Uttarakhand
+101 Locations • Updated Every Hour
 
 </h2>
 
@@ -1148,7 +1166,7 @@ Live Weather • Travel • Mountains • Adventure
 <input
 type="text"
 id="search"
-placeholder="🔍 Search a city...">
+placeholder="🔍 Search district, city, hill station or Char Dham...">
 
 </div>
 
