@@ -1360,6 +1360,17 @@ print("=" * 60)
 # PUBLISH TO BLOGGER
 # ==========================================================
 
+titles = [
+    "🌦 Uttarakhand Weather Brief",
+    "🏔 Live Weather Across Uttarakhand",
+    "🛕 Char Dham Weather Update",
+    "🌄 Mountain Weather Report",
+    "🚗 Uttarakhand Travel Weather",
+    "🌧 Latest Weather Across Uttarakhand",
+]
+
+import random
+
 blog_title = f"🌦 Uttarakhand Weather Brief | {last_updated}"
 
 blog_content = f"""
