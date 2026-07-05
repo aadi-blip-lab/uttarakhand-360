@@ -259,32 +259,32 @@ print()
 # ==========================================================
 
 warmest = max(
-    cities_weather,
+   district_weather,
     key=lambda city: city["temperature"]
 )
 
 coldest = min(
-    cities_weather,
+    district_weather,
     key=lambda city: city["temperature"]
 )
 
 windiest = max(
-    cities_weather,
+    district_weather,
     key=lambda city: city["wind"]
 )
 
 highest_humidity = max(
-    cities_weather,
+    district_weather,
     key=lambda city: city["humidity"]
 )
 
 highest_uv = max(
-    cities_weather,
+    district_weather,
     key=lambda city: city["uv"]
 )
 
 best_visibility = max(
-    cities_weather,
+    district_weather,
     key=lambda city: city["visibility"]
 )
 
