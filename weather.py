@@ -35,6 +35,8 @@ OUTPUT_FILE = "docs/index.html"
 
 cities_weather = []
 
+district_weather = []
+
 weather_cards = ""
 
 district_html = ""
@@ -173,6 +175,57 @@ for city in CITIES:
 
         print()
 
+# -----------------------------
+# FETCH DISTRICT WEATHER
+# -----------------------------
+
+print()
+print("Fetching district weather...")
+print("-" * 60)
+
+for district in DISTRICTS:
+
+    url = f"{BASE_URL}?key={API_KEY}&q={district['weather_query']}"
+
+    try:
+
+        response = requests.get(url, timeout=20)
+
+        response.raise_for_status()
+
+        data = response.json()
+
+        location = data["location"]
+        current = data["current"]
+
+        district_weather.append({
+
+            "city": district["name"],
+            "division": district["division"],
+
+            "temperature": current["temp_c"],
+            "feels_like": current["feelslike_c"],
+            "condition": current["condition"]["text"],
+            "icon": "https:" + current["condition"]["icon"],
+
+            "humidity": current["humidity"],
+            "wind": current["wind_kph"],
+            "wind_direction": current["wind_dir"],
+
+            "visibility": current["vis_km"],
+            "uv": current["uv"],
+            "cloud": current["cloud"],
+
+            "is_day": current["is_day"]
+
+        })
+
+        print(f"✓ {district['name']}")
+
+    except Exception as error:
+
+        print(f"✗ {district['name']}")
+        print(error)
 
 # -----------------------------
 # CHECK DATA
