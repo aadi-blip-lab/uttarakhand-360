@@ -506,7 +506,7 @@ navbar = f"""
 
 <li><a href="#">🛣 Road Status</a></li>
 
-<li><a href="#">🚨 Alerts</a></li>
+<li><a href="alerts.html">🚨 Alerts</a></li>
 
 <li><a href="about.html">ℹ About</a></li>
 
@@ -1463,6 +1463,87 @@ for alert in ALERTS:
 </div>
 
 """
+
+alerts_html = f"""
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alerts | Uttarakhand 360</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+{navbar}
+
+<section class="hero">
+
+<h1>
+
+🚨 Uttarakhand Alerts
+
+</h1>
+
+<h2>
+
+Official Government Alerts & Travel Advisories
+
+</h2>
+
+<p>
+
+Live alerts from government agencies, weather warnings and travel advisories across Uttarakhand.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>
+
+🚨 Active Alerts
+
+</h2>
+
+<div class="weather-grid">
+
+{alert_cards}
+
+</div>
+
+</section>
+
+{support_section}
+
+{footer}
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+"""
+with open(
+    "docs/alerts.html",
+    "w",
+    encoding="utf-8"
+) as file:
+
+    file.write(alerts_html)
+
+print("✓ alerts.html generated")
 
 # ==========================================================
 # PUBLISH TO BLOGGER
