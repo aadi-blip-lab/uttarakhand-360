@@ -1490,19 +1490,19 @@ alerts_html = f"""
 
 <h1>
 
-🚨 Uttarakhand Alerts
+🚨 Uttarakhand Emergency & Travel Alerts
 
 </h1>
 
 <h2>
 
-Official Government Alerts & Travel Advisories
+Official government alerts, weather warnings, disaster updates and travel advisories across Uttarakhand.
 
 </h2>
 
 <p>
 
-Live alerts from government agencies, weather warnings and travel advisories across Uttarakhand.
+Live updates from IMD, NDMA, USDMA and District Administration.
 
 </p>
 
