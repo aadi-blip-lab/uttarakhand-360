@@ -1549,109 +1549,139 @@ print("✓ alerts.html generated")
 # PUBLISH TO BLOGGER
 # ==========================================================
 
-titles = [
-    "🌦 Uttarakhand Weather Brief",
-    "🏔 Live Weather Across Uttarakhand",
-    "🛕 Char Dham Weather Update",
-    "🌄 Mountain Weather Report",
-    "🚗 Uttarakhand Travel Weather",
-    "🌧 Latest Weather Across Uttarakhand",
-]
-
 import random
 
-blog_title = f"🌦 Uttarakhand Weather Brief | {last_updated}"
+titles = [
+    "🏔 Planning a Trip? Check Today's Uttarakhand Weather First",
+    "🌦 Before You Travel: Check Today's Uttarakhand Weather",
+    "🛕 Char Dham Weather Before You Begin Your Journey",
+    "🚗 Travelling in Uttarakhand Today? Read This First",
+    "🌄 Uttarakhand Travel Weather | Live Updates"
+]
+
+blog_title = random.choice(titles)
 
 blog_content = f"""
-<h1>🌦 Uttarakhand Weather Brief</h1>
+<h1>{blog_title}</h1>
 
-<p><strong>{last_updated}</strong></p>
+<p><strong>Last Updated:</strong> {last_updated}</p>
 
 <hr>
 
-<h2>🚧 Uttarakhand 360 is currently in BETA</h2>
+<h2>🚧 Uttarakhand 360 is currently in Beta</h2>
 
 <p>
-Welcome to the early version of <strong>Uttarakhand 360</strong>.
-We're constantly adding new features including district weather,
-Char Dham updates, road conditions, travel information and much more.
-Thank you for being part of the journey!
+Thank you for visiting <strong>Uttarakhand 360</strong>.
+
+We're building a platform dedicated to helping travellers, pilgrims and locals stay informed before travelling across Uttarakhand.
+
+Our live dashboard currently covers weather updates for <strong>30+ destinations</strong>, including major cities, hill stations, district headquarters and the Char Dham route.
 </p>
 
 <hr>
 
-<h2>🔥 Today's Weather Highlights</h2>
+<h2>🔥 Today's Highlights</h2>
 
 <ul>
-<li>🔥 Warmest Place: <strong>{warmest['city']}</strong> ({warmest['temperature']}°C)</li>
 
-<li>❄ Coldest Place: <strong>{coldest['city']}</strong> ({coldest['temperature']}°C)</li>
+<li>🔥 Warmest Location:
+<strong>{warmest['city']}</strong>
+({warmest['temperature']}°C)</li>
 
-<li>💨 Strongest Winds: <strong>{windiest['city']}</strong> ({windiest['wind']} km/h)</li>
+<li>❄ Coldest Location:
+<strong>{coldest['city']}</strong>
+({coldest['temperature']}°C)</li>
 
-<li>💧 Highest Humidity: <strong>{highest_humidity['city']}</strong> ({highest_humidity['humidity']}%)</li>
+<li>💨 Strongest Winds:
+<strong>{windiest['city']}</strong>
+({windiest['wind']} km/h)</li>
 
-<li>☀ Highest UV: <strong>{highest_uv['city']}</strong></li>
+<li>💧 Highest Humidity:
+<strong>{highest_humidity['city']}</strong>
+({highest_humidity['humidity']}%)</li>
 
-<li>👀 Best Visibility: <strong>{best_visibility['city']}</strong></li>
+<li>👀 Best Visibility:
+<strong>{best_visibility['city']}</strong></li>
+
 </ul>
 
 <hr>
 
-<h2>🏔 Live Coverage Available</h2>
+<h2>🏔 Planning Your Journey?</h2>
 
 <p>
-✅ Major Cities<br>
-✅ Hill Stations<br>
-✅ District Headquarters<br>
-✅ Char Dham Route<br>
-✅ Tourist Destinations<br>
-✅ Hourly Weather Updates
-</p>
 
-<p>
-📍 Covering <strong>30+ destinations</strong> across Uttarakhand.
-</p>
+Whether you're travelling to <strong>Mussoorie</strong>,
+<strong>Nainital</strong>,
+<strong>Kedarnath</strong>,
+<strong>Badrinath</strong>,
+<strong>Auli</strong>,
+<strong>Joshimath</strong> or anywhere else in Uttarakhand,
 
-<hr>
+checking today's weather before you travel can help you prepare for changing mountain conditions.
 
-<h2>🛕 Want More?</h2>
-
-<p>
-✔ Live Weather Dashboard<br>
-✔ Char Dham Conditions<br>
-✔ District-wise Weather<br>
-✔ Mountain Destinations<br>
-✔ Travel Information<br>
-✔ Hourly Updates
-</p>
-
-<p>
-<strong>All available on Uttarakhand 360.</strong>
 </p>
 
 <hr>
 
-<div style="text-align:center;padding:20px;background:#f5f5f5;border-radius:10px;">
-
-<h2>🌐 Explore the Complete Dashboard</h2>
+<h2>🔍 Want Weather For Your Destination?</h2>
 
 <p>
-Real-time weather for 30+ destinations across Uttarakhand.
+
+Our live dashboard includes weather updates for:
+
+</p>
+
+<ul>
+
+<li>🏙 Major Cities</li>
+
+<li>🏔 Hill Stations</li>
+
+<li>🛕 Char Dham Route</li>
+
+<li>🗺 District Headquarters</li>
+
+<li>📍 Tourist Destinations</li>
+
+<li>⏱ Updated Every Hour</li>
+
+</ul>
+
+<p>
+
+<strong>...and many more locations across Uttarakhand.</strong>
+
+</p>
+
+<hr>
+
+<div style="text-align:center;background:#eef6ff;padding:20px;border-radius:10px;">
+
+<h2>🌐 Visit Uttarakhand 360</h2>
+
+<p>
+
+Find live weather for your destination,
+travel updates and much more.
+
 </p>
 
 <p>
 
 <a href="https://aadi-blip-lab.github.io/uttarakhand-360/"
 style="
-background:#0d6efd;
+background:#0066cc;
 color:white;
-padding:12px 24px;
+padding:14px 28px;
 text-decoration:none;
 border-radius:8px;
+font-size:18px;
 font-weight:bold;
 ">
-Visit Uttarakhand 360 →
+
+🔍 Check Your Destination Now
+
 </a>
 
 </p>
@@ -1660,15 +1690,16 @@ Visit Uttarakhand 360 →
 
 <hr>
 
-<p style="font-size:13px;color:#777;text-align:center;">
+<p style="font-size:13px;color:#666;text-align:center;">
 
-Generated automatically by Uttarakhand 360.<br>
+Weather updates are generated automatically.
 
-Weather updates every hour.<br>
+Uttarakhand 360 is under active development.
 
-More exciting features coming soon.
+Thank you for supporting the journey ❤️
 
 </p>
+
 """
 
 publish_to_blogger(blog_title, blog_content)
